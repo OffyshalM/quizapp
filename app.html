@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>csc335-QUIZAPP</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="app.css" />
+  <style>
+    .timer-wrapper {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 10px auto;
+    }
+
+    .circular-timer {
+      width: 100px;
+      height: 100px;
+      background: conic-gradient(#00796b calc(var(--percent) * 1%), #eee 0%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+    }
+
+    #resultContainer {
+      padding: 20px;
+      background-color: #f7f7f7;
+      border: 1px solid #ccc;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+    }
+
+    #resultContainer h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    #resultContainer p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    #resultContainer hr {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="courseTitle" id="courseTitle">CSC 335 - Software Engineering</header>
+
+  <div class="timeUp" id="timeUp" style="display: none;">Time Up!</div>
+
+  <div class="timer-wrapper">
+    <div class="circular-timer" id="circularTimer">
+      <span id="timer">01:40</span>
+    </div>
+  </div>
+
+  <main class="questionContainer" id="questionContainer">
+
+  </main>
+
+  <section class="optionContainer" id="optionContainer">
+
+  </section>
+
+  <div class="buttonsContainer">
+    <button class="prev" id="prevBtn">Prev</button>
+    <button class="next" id="nextBtn">Next</button>
+    <button class="submit" id="submitBtn" style="display: none;">Submit</button>
+  </div>
+
+  <button class="restartQuiz" id="restartQuiz" style="display: none;">Restart Quiz</button>
+
+</body>
+
+<script src="app.js"></script>
+
+</html>

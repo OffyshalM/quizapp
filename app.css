@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    padding: 0;
+    margin: auto;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins";
+    list-style: none;
+}
+
+body {
+    background: #eef2f6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.topBar {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+    font: 600 14px/1 Poppins;
+    color: #555;
+    margin-top: 8px
+}
+
+.progressTxt {
+    letter-spacing: .5px
+}
+
+.circleTimer {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    display: block
+}
+
+.circleTimer .bg {
+    fill: none;
+    stroke: #d9e4e8;
+    stroke-width: 8
+}
+
+.circleTimer .fg {
+    fill: none;
+    stroke: #00796b;
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset .4s linear
+}
+
+.courseTitle {
+    color: #00796b;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 25px 15px 15px 5px;
+    padding: 10px;
+}
+
+
+#svgTimer {
+    font: 600 26px/1 Poppins;
+    fill: #00796b;
+}
+
+.questionContainer {
+    width: 92%;
+    max-width: 480px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 20px;
+    margin: 18px 0;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, .06);
+    font-size: 16px;
+    font-weight: bolder;
+    color: #00796b;
+}
+
+.optionContainer>div {
+    width: 92%;
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 8px rgb(0 0 0 / .04);
+    cursor: pointer;
+    transition: background .25s;
+
+}
+
+.restartQuiz {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.restartQuiz:hover {
+    background-color: #45a049;
+}
+
+.optionContainer input {
+    display: none
+}
+
+.optionContainer label {
+    flex: 1;
+    font-size: 15px;
+    color: #00796b;
+    cursor: pointer
+}
+
+.optionContainer>div.selected {
+    background: #00796b;
+    color: #fff;
+    transform: scale(1.01);
+    transition: background 0.3s, transform 0.3s;
+}
+
+
+.optionContainer div {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.option-box {
+    border-radius: 10px;
+    padding: 12px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.option-box:hover {
+    background-color: #f0f0f0;
+}
+
+.option-box.selected {
+    background-color: #e7d1d1;
+    border-color: #198754;
+    font-weight: bold;
+}
+
+.option-box.selected label {
+    color: #ffffff;
+}
+
+
+.buttonsContainer {
+    width: 92%;
+    max-width: 480px;
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0
+}
+
+.buttonsContainer button {
+    flex: 1;
+    padding: 14px;
+    margin: 0 4px;
+    border: none;
+    border-radius: 14px;
+    font: 600 15px/1 Poppins;
+    cursor: pointer
+}
+
+.prev {
+    background: #e0e5ec;
+    color: #555
+}
+
+.next,
+.submit {
+    background: #00796b;
+    color: #fff
+}
+
+#timeUp {
+    position: fixed;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff0703;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 18px;
+    font-weight: 600;
+    z-index: 1000
+}
+
+#resultContainer {
+    width: 92%;
+    max-width: 480px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 20px;
+    box-shadow: 0 8px 18px rgb(0 0 0 / .08);
+    margin-top: 24px;
+    color: #000;
+
+}
+
+#resultContainer h2 {
+    margin: 0 0 16px;
+    color: #00796b;
+    text-align: center
+}
+
+#resultContainer p {
+    margin: 6px 0;
+    font-size: 14px
+}
+
+#resultContainer hr {
+    border: none;
+    height: 1px;
+    background: #9fd7d0;
+    margin: 14px 0
+}
+
+@media screen and (max-width: 600px) {
+    .courseTitle {
+        font-size: 1.5rem;
+        margin: 15px 10px;
+        padding: 8px;
+    }
+
+    .questionContainer,
+    .optionContainer>div,
+    .buttonsContainer,
+    #resultContainer {
+        width: 95%;
+        padding: 16px;
+    }
+
+    .circleTimer,
+    .timer-wrapper,
+    .circular-timer {
+        width: 80px;
+        height: 80px;
+        font-size: 14px;
+    }
+
+    .buttonsContainer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buttonsContainer button {
+        margin: 4px 0;
+        width: 100%;
+        padding: 12px;
+    }
+
+    .restartQuiz {
+        width: 90%;
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .optionContainer label {
+        font-size: 14px;
+    }
+
+    #timeUp {
+        font-size: 14px;
+        padding: 6px 14px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .courseTitle {
+        font-size: 1.2rem;
+    }
+
+    .circleTimer,
+    .timer-wrapper,
+    .circular-timer {
+        width: 70px;
+        height: 70px;
+        font-size: 12px;
+    }
+
+    #timer {
+        font-size: 14px;
+    }
+}
